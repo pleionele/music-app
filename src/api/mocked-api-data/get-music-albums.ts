@@ -17,6 +17,6 @@ export function getMusicAlbums() {
       return response.json();
     })
     .then(data => {
-      console.log('got data', data);
+      return data;
     });
 }

@@ -8,16 +8,18 @@ export default class App extends React.Component<{}, AppState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      albums: []
+      albums: undefined
     };
   }
 
   async componentDidMount() {
     const results = await getMusicAlbums();
-    this.setState({ albums: results });
-    console.log(results);
+    this.setState({ albums: results.albums });
   }
+
   public render() {
-    return <div>Hello</div>;
+    const { albums } = this.state;
+    console.log('Rendered albums', albums);
+    return <>{albums && <div>Hello</div>}</>;
   }
 }
