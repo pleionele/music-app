@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { getMusicAlbums } from '../api/mocked-api-data/get-music-albums';
+import { MusicAppProvider } from '../context/MusicAppContext';
 
 interface AppState {
   albums: any;
@@ -19,7 +20,14 @@ export default class App extends React.Component<{}, AppState> {
 
   public render() {
     const { albums } = this.state;
-    console.log('Rendered albums', albums);
-    return <>{albums && <div>Hello</div>}</>;
+    return (
+      <>
+        {albums && (
+          <MusicAppProvider albums={albums}>
+            <div>Hello</div>
+          </MusicAppProvider>
+        )}
+      </>
+    );
   }
 }
