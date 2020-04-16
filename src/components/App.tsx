@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { getMusicAlbums } from '../api/mocked-api-data/get-music-albums';
 import { MusicAppProvider } from '../context/MusicAppContext';
+import { AlbumPage } from './AlbumsPage';
 
 interface AppState {
   albums: any;
@@ -25,6 +26,7 @@ export default class App extends React.Component<{}, AppState> {
         {albums && (
           <MusicAppProvider albums={albums}>
             <div>Hello</div>
+            <AlbumPage />
           </MusicAppProvider>
         )}
       </>
