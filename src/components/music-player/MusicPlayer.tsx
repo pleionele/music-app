@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './MusicPlayer.scss';
 
 export const MusicPlayer: React.FC = () => {
   const playAudio = () => {
@@ -12,20 +13,21 @@ export const MusicPlayer: React.FC = () => {
 
   return (
     <>
-      <div>
+      <div className={'musicplayer__container'}>
         <div>Music Player</div>
         <i
           className="fa fa-chevron-left app-item"
           onClick={() => {
-            console.log('clicked to play');
-            playAudio();
+            console.log('clicked to pause');
+
+            pauseAudio();
           }}
         />
         <i
           className="fa fa-play app-item"
           onClick={() => {
-            console.log('clicked to pause');
-            pauseAudio();
+            console.log('clicked to play');
+            playAudio();
           }}
         />
         <i className="fa fa-chevron-right app-item" />

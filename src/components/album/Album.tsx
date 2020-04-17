@@ -2,15 +2,21 @@ import * as React from 'react';
 import { Album } from '../../domain/Album';
 
 interface AlbumItemProps {
-  key: number;
   album: Album;
 }
 
-export const AlbumItem: React.FC<AlbumItemProps> = ({ album, key }) => {
+export const AlbumItem: React.FC<AlbumItemProps> = ({ album }) => {
   return (
-    <div key={key}>
-      <div>Title:{album.name}</div>
-      <img src={album.image.url} width={120} />
+    <div key={album.id} className={'album-item'}>
+      <div className={'details'}>
+        <div>
+          Album: <strong>{album.name}</strong>
+        </div>
+        <div>
+          Name: <strong>{album.artist.name}</strong>
+        </div>
+      </div>
+      <img src={album.image.url} />
     </div>
   );
 };

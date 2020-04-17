@@ -1,17 +1,24 @@
 import * as React from 'react';
-import { AlbumItem } from '../album/Album';
-import { Album } from '../../domain/Album';
 import { useMusicAppContext } from '../../context/MusicAppContext';
+import './AlbumsPage.scss';
+import { Album } from '../../domain/Album';
+import { AlbumItem } from '../album/Album';
+import { MusicPlayer } from '../music-player/MusicPlayer';
 
-export const AlbumPage: React.FC<any> = () => {
+export const AlbumsPage: React.FC<any> = () => {
   const { albums } = useMusicAppContext();
 
   return (
     <div>
-      <h1 className={'header-title'}>Music Albums</h1>
-      {albums.map((album: Album, index: number) => (
-        <AlbumItem album={album} key={index} />
-      ))}
+      <header className="section header__container">
+        <h1 className="header">Music Albums</h1>
+      </header>
+      <div className={'album-section'}>
+        {albums.map((album: Album) => (
+          <AlbumItem album={album} key={album.id} />
+        ))}
+      </div>
+      <MusicPlayer />
     </div>
   );
 };

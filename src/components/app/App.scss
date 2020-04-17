@@ -1,17 +1,13 @@
 $dim-grey: #3c3c3c;
-
+$white: #eee;
 body {
   background-color: $dim-grey;
   -webkit-font-smoothing: antialiased;
   --moz-osx-font-smoothing: grayscale;
+  color: $white;
 }
 
-// .page {
-//   //   display: flex;
-//   //   flex-wrap: wrap;
-// }
-
-.header-title {
+.page {
   display: flex;
   justify-content: center;
 }

@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { getMusicAlbums } from '../../api/mocked-api-data/get-music-albums';
+import { getMusicAlbums } from '../../api/get-music-albums';
 import { MusicAppProvider } from '../../context/MusicAppContext';
-import { AlbumPage } from '../albums-page/AlbumsPage';
+import { AlbumsPage } from '../albums-page/AlbumsPage';
 import './App.scss';
-import { MusicPlayer } from '../music-player/MusicPlayer';
 
 interface AppState {
   albums: any;
@@ -24,15 +23,13 @@ export default class App extends React.Component<{}, AppState> {
   public render() {
     const { albums } = this.state;
     return (
-      <>
+      <div className={'page'}>
         {albums && (
           <MusicAppProvider albums={albums}>
-            <div>Hello</div>
-            <AlbumPage />
-            <MusicPlayer />
+            <AlbumsPage />
           </MusicAppProvider>
         )}
-      </>
+      </div>
     );
   }
 }
