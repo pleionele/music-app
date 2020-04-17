@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { getMusicAlbums } from '../api/mocked-api-data/get-music-albums';
-import { MusicAppProvider } from '../context/MusicAppContext';
-import { AlbumPage } from './AlbumsPage';
+import { getMusicAlbums } from '../../api/mocked-api-data/get-music-albums';
+import { MusicAppProvider } from '../../context/MusicAppContext';
+import { AlbumPage } from '../album-page/AlbumsPage';
+import './App.scss';
 
 interface AppState {
   albums: any;

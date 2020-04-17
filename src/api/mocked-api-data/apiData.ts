@@ -40,7 +40,7 @@ export const mockedApiData: { albums: Album[] } = {
       id: '41MnTivkwTO3UDDUJ8DrqEJJ',
       image: {
         height: 640,
-        url: 'https://i.scdn.co/image/21e1ebcd7ebd3b679d9d5084bba1e163638b103a',
+        url: 'https://i.scdn.co/image/c9976d5818a866de5607a61130c51ea1b4d59a62',
         width: 640
       },
       name: 'The Best Of KeaneB (Deluxe Edition)',
