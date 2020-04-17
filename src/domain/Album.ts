@@ -12,7 +12,7 @@ interface Artist {
   type: string;
 }
 
-interface Track {
+export interface Track {
   id: string;
   name: string;
   track_number: number;

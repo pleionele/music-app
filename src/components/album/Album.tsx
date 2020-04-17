@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useMusicAppContext } from '../../context/MusicAppContext';
 import { Album } from '../../domain/Album';
 
 interface AlbumItemProps {
@@ -6,8 +7,13 @@ interface AlbumItemProps {
 }
 
 export const AlbumItem: React.FC<AlbumItemProps> = ({ album }) => {
+  const { selectAlbum } = useMusicAppContext();
   return (
-    <div key={album.id} className={'album-item'}>
+    <div
+      key={album.id}
+      className={'album-item'}
+      onClick={() => selectAlbum(album)}
+    >
       <div className={'details'}>
         <div>
           Album: <strong>{album.name}</strong>
