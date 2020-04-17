@@ -1,5 +1,10 @@
-$dim-grey: #3c3c3c;
-$white: #eee;
+@import '../../styles/default.scss';
+
+.box-shadow {
+  -webkit-box-shadow: $box-shadow;
+  box-shadow: $box-shadow;
+}
+
 body {
   background-color: $dim-grey;
   -webkit-font-smoothing: antialiased;

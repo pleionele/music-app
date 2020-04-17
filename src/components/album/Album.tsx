@@ -11,7 +11,7 @@ export const AlbumItem: React.FC<AlbumItemProps> = ({ album }) => {
   return (
     <div
       key={album.id}
-      className={'album-item'}
+      className={'album-item item'}
       onClick={() => selectAlbum(album)}
     >
       <div className={'details'}>
