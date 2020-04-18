@@ -1,15 +1,28 @@
 import * as React from 'react';
 import './MusicPlayer.scss';
+import { useMusicAppContext } from '../../context/MusicAppContext';
 
 export const MusicPlayer: React.FC = () => {
+  // const [audioSource, setsource] = useState(
+  //   "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+  // );
+  const audioRef: any = React.useRef();
+
+  const { selectedSong } = useMusicAppContext();
   const playAudio = () => {
-    const audioEl = document.getElementsByClassName('audio-element')[0];
-    (audioEl as any).play();
+    audioRef.current.play();
   };
   const pauseAudio = () => {
-    const audioEl = document.getElementsByClassName('audio-element')[0];
-    (audioEl as any).pause();
+    audioRef.current.pause();
   };
+
+  React.useEffect(() => {
+    const { current } = audioRef;
+    // console.log("CURRENT", (current as any).src);
+    (current as any).src = selectedSong && selectedSong.href;
+    current.play();
+    // selectedSong && setsource(selectedSong.href);
+  }, [selectedSong]);
 
   return (
     <>
@@ -33,8 +46,12 @@ export const MusicPlayer: React.FC = () => {
         <i className="fa fa-chevron-right app-item" />
       </div>
       <div>
-        <audio className="audio-element">
-          <source src="http://streaming.tdiradio.com:8000/house.mp3" />
+        <audio
+          className="audio-element"
+          ref={audioRef}
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+        >
+          {/* <source src={audioSource} /> */}
         </audio>
       </div>
     </>

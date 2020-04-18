@@ -17,12 +17,14 @@ export const mockedApiData: { albums: Album[] } = {
       name: 'The Best Of Keane (Deluxe Edition)',
       tracks: [
         {
+          href: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
           id: '4r9PmSmbAOOhtWqaGWLf6M9Q',
           name: "Everybody's Changing",
           track_number: 1,
           type: 'track'
         },
         {
+          href: 'http://streaming.tdiradio.com:8000/house.mp3',
           id: '0HJQD8uqvdaX2Bq5HVdLnd3ep',
           name: 'Somewhere Only We Know',
           track_number: 2,
@@ -46,12 +48,16 @@ export const mockedApiData: { albums: Album[] } = {
       name: 'The Best Of KeaneB (Deluxe Edition)',
       tracks: [
         {
+          href:
+            'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3',
           id: '4r9PmSmbAOOWdqaGWLf6M9Q',
           name: "Everybody's Changing",
           track_number: 1,
           type: 'track'
         },
         {
+          href:
+            'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3',
           id: '0HJQD8uqX2Bqa5HVdLnd3ep',
           name: 'Somewhere Only We Know',
           track_number: 2,
@@ -77,9 +83,11 @@ export const mockedApiData: { albums: Album[] } = {
           id: '4r9PmSmbAOOWqaGWLf6M9Q',
           name: "Everybody's Changing",
           track_number: 1,
-          type: 'track'
+          type: 'track',
+          href: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3'
         },
         {
+          href: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
           id: '0HJQD8uqX2Bq5HVdLnd3ep',
           name: 'Somewhere Only We Know',
           track_number: 2,

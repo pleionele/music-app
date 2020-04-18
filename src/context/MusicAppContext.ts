@@ -1,5 +1,5 @@
 import createUseContext from 'constate';
-import { Album } from '../domain/Album';
+import { Album, Track } from '../domain/Album';
 import { useState } from 'react';
 
 interface MusicAppProps {
@@ -12,12 +12,23 @@ interface MusicApp {
   selectedView: string;
   selectedAlbum?: Album;
   selectAlbum: Function;
+  selectedSong?: Track;
+  selectStong: Function;
 }
 const MusicAppContextHook = ({ albums }: MusicAppProps): MusicApp => {
-  console.log('CONTEXT', albums);
   const [selectedView, selectView] = useState('albums');
   const [selectedAlbum, selectAlbum] = useState();
-  return { selectedView, selectView, selectedAlbum, selectAlbum, albums };
+  const [selectedSong, selectStong] = useState();
+
+  return {
+    selectedView,
+    selectView,
+    selectedAlbum,
+    selectAlbum,
+    albums,
+    selectStong,
+    selectedSong
+  };
 };
 
 export const useMusicAppContext = createUseContext(MusicAppContextHook);
