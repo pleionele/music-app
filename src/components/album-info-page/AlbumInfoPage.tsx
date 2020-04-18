@@ -6,8 +6,12 @@ import { useMusicAppContext } from '../../context/MusicAppContext';
 import { MusicPlayer } from '../music-player/MusicPlayer';
 
 export const AlbumInfoPage: React.FC<any> = () => {
-  const { selectedAlbum, selectAlbum } = useMusicAppContext();
+  const { selectedAlbum, selectAlbum, selectStong } = useMusicAppContext();
 
+  const goBackHandler = () => {
+    selectAlbum(undefined);
+    selectStong();
+  };
   return (
     <div>
       <header
@@ -17,7 +21,7 @@ export const AlbumInfoPage: React.FC<any> = () => {
         <h1 className="header">Album Info</h1>
       </header>
       <div className="goBack">
-        <a data-testid="goBackButton" onClick={() => selectAlbum(undefined)}>
+        <a data-testid="goBackButton" onClick={goBackHandler}>
           <strong>{'<  '}</strong>
           <strong>{'Go back'}</strong>
         </a>
