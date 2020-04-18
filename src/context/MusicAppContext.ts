@@ -14,11 +14,14 @@ interface MusicApp {
   selectAlbum: Function;
   selectedSong?: Track;
   selectStong: Function;
+  setAllTracks: Function;
+  allTracks: Track[];
 }
 const MusicAppContextHook = ({ albums }: MusicAppProps): MusicApp => {
   const [selectedView, selectView] = useState('albums');
   const [selectedAlbum, selectAlbum] = useState();
   const [selectedSong, selectStong] = useState();
+  const [allTracks, setAllTracks] = useState([]);
 
   return {
     selectedView,
@@ -27,7 +30,9 @@ const MusicAppContextHook = ({ albums }: MusicAppProps): MusicApp => {
     selectAlbum,
     albums,
     selectStong,
-    selectedSong
+    selectedSong,
+    allTracks,
+    setAllTracks
   };
 };
 
