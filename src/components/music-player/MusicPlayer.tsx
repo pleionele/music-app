@@ -8,31 +8,29 @@ export const MusicPlayer: React.FC = () => {
   // );
 
   const [currentDuration, setCurrentDuration] = React.useState(0);
-  const [maxDuration, setMaxDuration] = React.useState();
 
   const audioRef: any = React.useRef();
   const progressBarRef: any = React.useRef();
 
   const { selectedSong } = useMusicAppContext();
   const playAudio = () => {
-    console.log('duration:', audioRef.current.duration);
-
-    console.log('current time:', audioRef.current.currentTime);
     audioRef.current.play();
   };
   const pauseAudio = () => {
+    console.log('duration:', audioRef.current.duration);
+
+    console.log('current time:', audioRef.current.currentTime);
     audioRef.current.pause();
   };
-  // React.useEffect(() => {
-  //   audioRef.current.addEventListener("timeUpdate", (e: any) => {
-  //     console.log("e", e);
-  //   });
-  // }, []);
-
+  React.useEffect(() => {
+    console.log(currentDuration, 'HERE');
+  }, [currentDuration]);
   React.useEffect(() => {
     const { current } = audioRef;
+    // console.log("CURRENT", (current as any).src);
     (current as any).src = selectedSong && selectedSong.href;
-    playAudio();
+    current.play();
+    // selectedSong && setsource(selectedSong.href);
   }, [selectedSong]);
 
   return (
@@ -81,7 +79,7 @@ export const MusicPlayer: React.FC = () => {
         >
           {/* <source src={audioSource} /> */}
         </audio>
-        <progress ref={progressBarRef} id="progressBar" />
+        <progress ref={progressBarRef} />
       </div>
     </>
   );
