@@ -52,7 +52,6 @@
   "scripts": {
     "start:dev": "webpacK-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "test": "jest --coverage",
-    "test:watch": "jest --coverage --watch"
+    "start:prod": "rm -rf dist/ && yarn build && node ./server.js"
   }
 }
