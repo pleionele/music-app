@@ -6,7 +6,11 @@ import { AlbumItem } from '../album/Album';
 import { MusicPlayer } from '../music-player/MusicPlayer';
 
 export const AlbumsPage: React.FC<any> = () => {
-  const { albums } = useMusicAppContext();
+  const { albums, selectView } = useMusicAppContext();
+  // set the view
+  React.useEffect(() => {
+    selectView('albumsList');
+  }, []);
 
   return (
     <div>

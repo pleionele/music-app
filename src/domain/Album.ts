@@ -18,4 +18,5 @@ export interface Track {
   track_number: number;
   type: string;
   href: string;
+  key?: number;
 }

@@ -6,7 +6,16 @@ import { useMusicAppContext } from '../../context/MusicAppContext';
 import { MusicPlayer } from '../music-player/MusicPlayer';
 
 export const AlbumInfoPage: React.FC<any> = () => {
-  const { selectedAlbum, selectAlbum, selectStong } = useMusicAppContext();
+  const {
+    selectedAlbum,
+    selectAlbum,
+    selectStong,
+    selectView
+  } = useMusicAppContext();
+  // set the view
+  React.useEffect(() => {
+    selectView('tracksList');
+  }, []);
 
   const goBackHandler = () => {
     selectAlbum(undefined);
@@ -30,7 +39,7 @@ export const AlbumInfoPage: React.FC<any> = () => {
         {selectedAlbum && <img src={selectedAlbum.image.url} />}
         <div>
           {selectedAlbum &&
-            selectedAlbum.tracks.map((track: Track, index: number) => (
+            selectedAlbum.tracks.map((track, index) => (
               <TrackItem key={index} track={track} />
             ))}
         </div>
