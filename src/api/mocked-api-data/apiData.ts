@@ -24,7 +24,8 @@ export const mockedApiData: { albums: Album[] } = {
           type: 'track'
         },
         {
-          href: 'http://streaming.tdiradio.com:8000/house.mp3',
+          href:
+            'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3',
           id: '0HJQD8uqvdaX2Bq5HVdLnd3ep',
           name: 'Somewhere Only We Know',
           track_number: 2,
