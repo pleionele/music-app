@@ -1,16 +1,24 @@
+@import '../../styles/default.scss';
+
 .musicplayer {
   &__container {
     background-color: #a6a6a6;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    i {
-      padding: 1em;
-    }
   }
   &__controls {
     display: flex;
     justify-content: space-around;
+    i {
+      padding: 1em;
+      &:hover {
+        cursor: pointer;
+        -webkit-box-shadow: $dim-grey;
+        background-color: $dim-grey;
+        border-radius: 10px;
+      }
+    }
   }
   &__bar {
     align-self: center;

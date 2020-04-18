@@ -4,12 +4,13 @@ import './AlbumsPage.scss';
 import { Album } from '../../domain/Album';
 import { AlbumItem } from '../album/Album';
 import { MusicPlayer } from '../music-player/MusicPlayer';
+import { View } from '../../domain/View';
 
 export const AlbumsPage: React.FC<any> = () => {
   const { albums, selectView } = useMusicAppContext();
   // set the view
   React.useEffect(() => {
-    selectView('albumsList');
+    selectView(View.ALBUM_LIST);
   }, []);
 
   return (

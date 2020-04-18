@@ -4,6 +4,7 @@ import './AlbumInfoPage.scss';
 import { Track } from '../../domain/Album';
 import { useMusicAppContext } from '../../context/MusicAppContext';
 import { MusicPlayer } from '../music-player/MusicPlayer';
+import { View } from '../../domain/View';
 
 export const AlbumInfoPage: React.FC<any> = () => {
   const {
@@ -14,7 +15,8 @@ export const AlbumInfoPage: React.FC<any> = () => {
   } = useMusicAppContext();
   // set the view
   React.useEffect(() => {
-    selectView('tracksList');
+    selectView(View.TRACK_LIST);
+    selectStong();
   }, []);
 
   const goBackHandler = () => {
